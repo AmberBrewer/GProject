@@ -1,0 +1,46 @@
+body{
+    background-color: #9FA0C3;
+}
+
+button{
+    background-color: #667761;
+}
+
+.itemPicture{
+    margin: 10px;
+    width: 60%;
+    height: 60%;
+    border-radius: 40%;
+}
+
+.box{
+    border-width: 10px;
+    border: #86E7B8 solid;
+    margin: 5px;
+    background-color: #EE6352;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.header{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: #86E7B8 solid;
+    border-width: 5px;
+}
+.logoImage{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.Checkout{
+    border:#86E7B8 solid;
+    background-color: cornflowerblue;
+}
+
+.headerButton{
+    margin-top: 20px;
+}
+.headerCount{
+    margin-top: 20px;
+}
