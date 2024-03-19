@@ -9,9 +9,17 @@ import Sorting from "./components/Sorting"
 function App(){
     const [counter, setCount] = React.useState(0)
     const [showCheckOut,setShowCheckOut] = React.useState(false)
-    const [selected,setSelected] = React.useState(false)
-    function AddToCheckOut(){
+    const [checkOut, setcheckOut] = React.useState([{
+        title:"",
+        price:""
+    }])
+
+    function AddToCheckOut(currentGrocery){
+        console.log(currentGrocery);
         setCount(PrevCounter => PrevCounter + 1)
+        setcheckOut(prevcheckOut => [...prevcheckOut, checkOut])
+        console.log(checkOut)
+
     }
     function ShowCheckOut(){
         setShowCheckOut(prevShowCheckOut => !prevShowCheckOut)
@@ -23,7 +31,10 @@ return(
             <Header showFunc={ShowCheckOut} number={counter}/>
         </div>
         <div className="row">
-            <Sorting/>
+           <div className="col-sm-6"></div>
+           <div className="col-sm-6">
+            <button className="uselessSortButton">Filter</button>
+           </div>
         </div>
         <div className="row">
             <div className="col-sm-8">
@@ -31,7 +42,7 @@ return(
                 <GroceryList addFunc={AddToCheckOut}/>
             </div>
             <div className="col-sm-4 checkout">
-                {showCheckOut && <CheckOut showBoolean={showCheckOut}/>}
+                {showCheckOut && <CheckOut showBoolean={showCheckOut} displayElement={checkOut}/>}
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ function MenuItemBoxes(props){
                         <h5>{props.foodType}</h5>
                     </div>
                     <div className="col-sm-12">
-                        <button onClick={props.AddToCheckOut}>Add To Cart</button>
+                        <button onClick={() => props.addToCheckOut(props.title, props.price)}>Add To Cart</button>
                     </div>
                 </div>
             </div>

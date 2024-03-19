@@ -6,77 +6,77 @@ const itemList = [
         picture:'milk.jpg',
         title: "Milk",
         foodType: "dairy",
-        price: 6.99
+        price: "6.99"
     },
     {
         picture:"yogurt.jpg",
         title: "Yogurt",
         foodType: "dairy",
-        price: 5.49
+        price: "5.49"
     },
     {
         picture:"gouda.jpg",
         title: "Gouda Cheese",
         foodType: "dairy",
-        price: 4.74
+        price: "4.74"
     },
     {
         picture:"butter.jpg",
         title: "Butter",
         foodType: "dairy",
-        price: 4.66
+        price: "4.66"
     },
     {
         picture:"eggs.jpg",
         title: "Dozen eggs",
         foodType: "dairy",
-        price: 4.82
+        price: "4.82"
     },
     {
         picture:"sugar.jpg",
         title:"Sugar",
         foodType:"Carbohydrate",
-        price:4.80
+        price: "4.80"
     },
     {
         picture:"flour.jpg",
         title:"Flour",
         foodType:"Grains",
-        price:4.99
+        price: "4.99"
     },
     {
         picture:"celery.jpg",
         title:"Celery",
         foodType:"Vegetable",
-        price:2.09
+        price: "2.09"
     },
     {
         picture:"carrots.jpg",
         title:"Carrots",
         foodType:"Vegetable",
-        price:6.29
+        price: "6.29"
     },
     {
         picture:"squash.jpg",
         title:"Squash",
         foodType:"Vegetable",
-        price:4.00
+        price: "4.00"
     },
     {
         picture:"zucchini.jpg",
         title:"Zucchini",
         foodType:"Vegetable",
-        price:7.19
+        price: "7.19"
     },
     {
         picture:"pudding.jpg",
         title:"Pudding",
         foodType:"Dessert",
-        price:20.99
+        price: "20.99"
     }
 ]
 
-function GroceryList(){
+function GroceryList(props){
     /* ItemList is a parameter that "contains or holds" the item information. ie: (price) is a number, (title) is a string */
     /* MenuItems.map function is a "method" which is simply the information passed which is then mapped through like an array. */
     const MenuItemDataMap = itemList.map((currentGrocery) => {
@@ -85,6 +85,7 @@ function GroceryList(){
         title = {currentGrocery.title}
         price = {currentGrocery.price}
         foodType = {currentGrocery.foodType}
+        addToCheckOut={props.addFunc}
         />
 
         }

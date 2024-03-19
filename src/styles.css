@@ -19,7 +19,7 @@ button{
     margin: 5px;
     background-color: #EE6352;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 40px;
 }
 .header{
     margin-top: 20px;
@@ -43,4 +43,7 @@ button{
 }
 .headerCount{
     margin-top: 20px;
+}
+.uselessSortButton{
+    margin: 5px;
 }
