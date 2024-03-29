@@ -1,13 +1,12 @@
 
 
 function CheckOut(props){
-    const checkOut = props.displayElement.map((currentGrocery) => {
-        return <p>
-            {currentGrocery.title}
-            {currentGrocery.price}
-        </p>
-        
-    })
+   const checkOutMap = props.displayElement.map((currentItem) =>{
+    return <div className="container">
+        <p>{currentItem.title}: ${currentItem.price}</p>
+    </div>
+   })  
+   
     console.log(props)
     return (
         
@@ -15,13 +14,13 @@ function CheckOut(props){
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        {checkOut}
+                        {checkOutMap}
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
-                       <p>Sub-Total: </p>
-                        <p>Total: </p>
+                        <p>Sub-Total: ${props.setSubTotal.toFixed(2)}</p>
+                        <p>Total: ${props.setTotal.toFixed(2)}</p>
                     </div>
                 </div>
             </div>

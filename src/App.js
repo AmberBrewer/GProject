@@ -9,22 +9,31 @@ import Sorting from "./components/Sorting"
 function App(){
     const [counter, setCount] = React.useState(0)
     const [showCheckOut,setShowCheckOut] = React.useState(false)
-    const [checkOut, setcheckOut] = React.useState([{
-        title:"",
-        price:""
-    }])
+    const [checkOut, setcheckOut] = React.useState([])
+    const [total, setTotal] = React.useState(0.00)
+    const [subTotal, setSubTotal] = React.useState(0.00)
 
-    function AddToCheckOut(currentGrocery){
-        console.log(currentGrocery);
+    function AddToCheckOut(title, price){
         setCount(PrevCounter => PrevCounter + 1)
-        setcheckOut(prevcheckOut => [...prevcheckOut, checkOut])
+        setcheckOut(prevcheckOut => [...prevcheckOut, {
+            title: title,
+            price: price
+        }])
+        let cost =+ price;
+        setSubTotal(prevSub => prevSub +cost);
+        let totaling = cost * 0.07;
+        let tot = cost + totaling;
+        setTotal(prevTotal => prevTotal +tot);
+        console.log(total);
+        console.log(subTotal);
         console.log(checkOut)
-
     }
     function ShowCheckOut(){
         setShowCheckOut(prevShowCheckOut => !prevShowCheckOut)
         console.log(showCheckOut)
+
     }
+
 return(
     <div className="fluid-container ">
         <div className="row">
@@ -39,10 +48,10 @@ return(
         <div className="row">
             <div className="col-sm-8">
                 {/* MenuItemBoxes is called here to be shown on App, it is also called into the specific space since col-sm-12 is being used */}
-                <GroceryList addFunc={AddToCheckOut}/>
+                <GroceryList addFunc={AddToCheckOut} />
             </div>
             <div className="col-sm-4 checkout">
-                {showCheckOut && <CheckOut showBoolean={showCheckOut} displayElement={checkOut}/>}
+                {showCheckOut && <CheckOut showBoolean={showCheckOut} displayElement={checkOut} setSubTotal={subTotal} setTotal={total}/>}
             </div>
         </div>
     </div>
